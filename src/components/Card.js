@@ -24,7 +24,7 @@ class Card extends React.Component {
 	componentDidMount() {
 		this.logoLetters = this.card.getElementsByTagName('path');
 		console.log("logo letters ==> ", this.logoLetters);
-    
+
 		this.fillValue = 0;
     this.scaleValue = 0;
     this.incrementer = .01;

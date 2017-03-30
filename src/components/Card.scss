@@ -1,8 +1,8 @@
 #card {
 	transform-style: preserve-3d;
-	transform-origin: left top;
+	transform-origin: top left;
   backface-visibility: hidden;
-	transform: translate(-50%, -50%) translateZ(0);
+	transform: translate(-50%, -50%);
 }
 
 svg {
