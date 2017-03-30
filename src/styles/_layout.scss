@@ -1,0 +1,37 @@
+html,
+body,
+#root
+{
+  margin: 0px;
+  padding: 0px;
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  padding: 0px;
+	perspective: 1000px;
+	transform-style: preserve-3d;
+	/*background: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%);
+	background-size: 600% 600%;*/
+	background: linear-gradient(320deg, #a77cc5, #626ed4, #e14eae);
+	background-size: 200% 200%;
+	animation: MoveGradient 40s ease infinite;
+}
+
+.center {
+  width: 50%;
+  max-height: 300px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  text-align: center;
+	border-radius: 5px;
+}
+
+@keyframes MoveGradient {
+    0%{background-position:4% 0%}
+    50%{background-position:97% 100%}
+    100%{background-position:4% 0%}
+}
