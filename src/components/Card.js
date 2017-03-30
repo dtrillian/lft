@@ -6,15 +6,11 @@ class Card extends React.Component {
   constructor(props) {
     super(props);
 
-		this.logoAnimation = this.logoAnimation.bind(this);
+		/*this.logoAnimation = this.logoAnimation.bind(this);*/
 
 		this.docElm = document.documentElement;
 		this.clientWidth = this.docElm.clientWidth;
 		this.clientHeight = this.docElm.clientHeight;
-
-		this.docElm.addEventListener('mousemove', (e) => {
-			this.directionalHover(e);
-		});
   }
 
 	shouldComponentUpdate() {
@@ -22,34 +18,38 @@ class Card extends React.Component {
 	}
 
 	componentDidMount() {
-		this.logoLetters = this.card.getElementsByTagName('path');
-		console.log("logo letters ==> ", this.logoLetters);
+    /*this.docElm.addEventListener('mousemove', (e) => {
+			this.directionalHover(e);
+		});*/
 
-		this.fillValue = 0;
+		/*this.logoLetters = this.card.getElementsByTagName('path');
+		console.log("logo letters ==> ", this.logoLetters);*/
+
+		/*this.fillValue = 0;
     this.scaleValue = 0;
     this.incrementer = .01;
-		this.animId = requestAnimationFrame(this.logoAnimation);
+		this.animId = requestAnimationFrame(this.logoAnimation);*/
 	}
 
-	directionalHover(event) {
+	/*directionalHover(event) {
 		const pos = {
 			x: event.pageX,
 			y: event.pageY
 		};
 
-		const rotX = (this.clientHeight / 2 - pos.y) / 20;
-	  const rotY = -(this.clientWidth / 2 - pos.x) / 40;
+		const rotX = (this.clientHeight / 2 - pos.y) / 10;
+	  const rotY = -(this.clientWidth / 2 - pos.x) / 20;
 
 		this.card.style.cssText = `transform: rotateX(${rotX}deg) rotateY(${rotY}deg) translate(-50%, -50%)`;
-	}
+	}*/
 
-	logoAnimation() {
+	/*logoAnimation() {
     this.incrementer += 3;
 
     this.fillValue += .01;
     this.card.querySelector('svg').style.fill = `rgba(255, 255, 255, ${this.fillValue})`;
 
-    if (this.scaleValue < 1.2) {
+    if (this.scaleValue < 1) {
       this.scaleValue += (1 / (this.incrementer * 2));
       this.card.querySelector('svg').style.transform = `scale(${this.scaleValue})`;
     }
@@ -59,12 +59,13 @@ class Card extends React.Component {
     }
 
 		this.animId = requestAnimationFrame(this.logoAnimation);
-	}
+	}*/
 
   render() {
     return (
 			<div className="center" id="card" ref={(ref) => { this.card = ref; }}>
 				<Logo />
+        <div className="card-description">Vos séries préferées</div>
 			</div>
 		);
   }

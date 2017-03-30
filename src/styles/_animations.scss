@@ -1,0 +1,33 @@
+@keyframes move-gradient {
+    0%{background-position:4% 0%}
+    50%{background-position:97% 100%}
+    100%{background-position:4% 0%}
+}
+
+@keyframes fade-slide-down {
+  0% {
+    opacity: 0;
+    transform: translateY(-25%);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes from-loader-to-header {
+  from {
+    height: 100%;
+    //transform: scaleY(10/3*3);
+  }
+  to {
+    height: 40%;
+    //transform: none;
+  }
+}
+
+@keyframes rotate-up {
+  100% {
+    transform: rotateZ(-2deg);
+  }
+}
