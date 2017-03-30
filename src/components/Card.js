@@ -26,6 +26,7 @@ class Card extends React.Component {
 		console.log("logo letters ==> ", this.logoLetters);
 		this.fillValue = 0;
     this.scaleValue = 0;
+    this.incrementer = .01;
 		this.animId = requestAnimationFrame(this.logoAnimation);
 	}
 
@@ -42,11 +43,13 @@ class Card extends React.Component {
 	}
 
 	logoAnimation() {
-    this.fillValue += 0.01;
+    this.incrementer += 3;
+
+    this.fillValue += (1 / this.incrementer);
     this.card.querySelector('svg').style.fill = `rgba(255, 255, 255, ${this.fillValue})`;
 
     if (this.scaleValue < 1.2) {
-      this.scaleValue += 0.02;
+      this.scaleValue += (1 / (this.incrementer * 2));
       this.card.querySelector('svg').style.transform = `scale(${this.scaleValue})`;
     }
 
