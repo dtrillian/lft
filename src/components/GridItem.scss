@@ -1,0 +1,43 @@
+.grid-item {
+  color: white;
+  width: 23%;
+  margin-bottom: 15px;
+  position: relative;
+  border-radius: 5px;
+  overflow: hidden;
+  cursor: pointer;
+
+  &:before {
+    display: block;
+    content: "";
+    width: 100%;
+    padding-top: (9 / 16) * 100%;
+  }
+
+  .grid-item__content {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-size: cover;
+
+    &:before {
+      content: '';
+    	position: absolute;
+    	top: 50%;
+    	right: 0;
+    	bottom: 0;
+    	left: 0;
+    	background-image: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(255, 255, 255, 0));
+    	opacity: .6;
+    }
+  }
+
+  .grid-item__title {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    font-size: 20px;
+  }
+}

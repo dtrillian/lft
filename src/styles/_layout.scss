@@ -11,13 +11,12 @@ body,
 body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   padding: 0px;
+  overflow-x: hidden;
 	perspective: 1000px;
 	transform-style: preserve-3d;
-	/*background: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%);
-	background-size: 600% 600%;*/
-	background: linear-gradient(320deg, #a77cc5, #626ed4, #e14eae);
-	background-size: 200% 200%;
-	animation: MoveGradient 40s ease infinite;
+
+  background-color: $body-color;
+
 }
 
 .center {
@@ -28,6 +27,33 @@ body {
   top: 50%;
   text-align: center;
 	border-radius: 5px;
+}
+
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0; 
+  bottom: 60%;
+
+  /*background: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%);
+  background-size: 600% 600%;*/
+  background: linear-gradient(320deg, #a77cc5, #626ed4, #e14eae);
+	background-size: 200% 200%;
+	animation: MoveGradient 40s ease infinite;
+
+  &:after {
+    content: "";
+    background: $body-color;
+    height: 10%;
+    left: -5%;
+    position: absolute;
+    right: -5%;
+    bottom: -10%;
+    transform-origin: top left;
+    z-index: 0;
+    transform: rotateZ(-1deg);
+  }
 }
 
 @keyframes MoveGradient {

@@ -24,6 +24,7 @@ class Card extends React.Component {
 	componentDidMount() {
 		this.logoLetters = this.card.getElementsByTagName('path');
 		console.log("logo letters ==> ", this.logoLetters);
+    
 		this.fillValue = 0;
     this.scaleValue = 0;
     this.incrementer = .01;
@@ -36,8 +37,8 @@ class Card extends React.Component {
 			y: event.pageY
 		};
 
-		const rotX = (this.clientHeight / 2 - pos.y) / 10;
-	  const rotY = -(this.clientWidth / 2 - pos.x) / 20;
+		const rotX = (this.clientHeight / 2 - pos.y) / 20;
+	  const rotY = -(this.clientWidth / 2 - pos.x) / 40;
 
 		this.card.style.cssText = `transform: rotateX(${rotX}deg) rotateY(${rotY}deg) translate(-50%, -50%)`;
 	}
@@ -45,7 +46,7 @@ class Card extends React.Component {
 	logoAnimation() {
     this.incrementer += 3;
 
-    this.fillValue += (1 / this.incrementer);
+    this.fillValue += .01;
     this.card.querySelector('svg').style.fill = `rgba(255, 255, 255, ${this.fillValue})`;
 
     if (this.scaleValue < 1.2) {
@@ -53,7 +54,7 @@ class Card extends React.Component {
       this.card.querySelector('svg').style.transform = `scale(${this.scaleValue})`;
     }
 
-    if (this.fillValue === 1) {
+    if (this.fillValue === .8) {
       cancelAnimationFrame(this.animId);
     }
 
