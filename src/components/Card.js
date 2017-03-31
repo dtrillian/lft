@@ -6,7 +6,7 @@ class Card extends React.Component {
   constructor(props) {
     super(props);
 
-		/*this.logoAnimation = this.logoAnimation.bind(this);*/
+		this.logoAnimation = this.logoAnimation.bind(this);
 
 		this.docElm = document.documentElement;
 		this.clientWidth = this.docElm.clientWidth;
@@ -18,20 +18,20 @@ class Card extends React.Component {
 	}
 
 	componentDidMount() {
-    /*this.docElm.addEventListener('mousemove', (e) => {
+    this.docElm.addEventListener('mousemove', (e) => {
 			this.directionalHover(e);
-		});*/
+		});
 
-		/*this.logoLetters = this.card.getElementsByTagName('path');
-		console.log("logo letters ==> ", this.logoLetters);*/
+		this.logoLetters = this.card.getElementsByTagName('path');
+		console.log("logo letters ==> ", this.logoLetters);
 
-		/*this.fillValue = 0;
+		this.fillValue = 0;
     this.scaleValue = 0;
     this.incrementer = .01;
-		this.animId = requestAnimationFrame(this.logoAnimation);*/
+		this.animId = requestAnimationFrame(this.logoAnimation);
 	}
 
-	/*directionalHover(event) {
+	directionalHover(event) {
 		const pos = {
 			x: event.pageX,
 			y: event.pageY
@@ -41,9 +41,9 @@ class Card extends React.Component {
 	  const rotY = -(this.clientWidth / 2 - pos.x) / 20;
 
 		this.card.style.cssText = `transform: rotateX(${rotX}deg) rotateY(${rotY}deg) translate(-50%, -50%)`;
-	}*/
+	}
 
-	/*logoAnimation() {
+	logoAnimation() {
     this.incrementer += 3;
 
     this.fillValue += .01;
@@ -59,7 +59,7 @@ class Card extends React.Component {
     }
 
 		this.animId = requestAnimationFrame(this.logoAnimation);
-	}*/
+	}
 
   render() {
     return (
